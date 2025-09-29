@@ -1,0 +1,90 @@
+[
+  {
+    "dataset": "Narrative_Beginnings_En",
+    "experiment_name": "Narrative_En_Mistral_3.2_24B",
+    "model": {
+        "name": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+        "model_args": {
+            "gpu_memory_utilization": 0.98,
+            "max_num_seqs": 14,
+            "tensor_parallel_size": 1,
+            "max_model_len": 13000
+        }
+  },
+   "prompts": {
+        "prompt_type": "Chat",
+        "system_prompt": {
+            "role": "system",
+            "content": "You are an award-winning author. Your task is to write a fictional narrative. As a starting point, use the first sentence provided by the user. Write a continuous narrative (without interruptions or questions) and let the story run on for as long as possible. Do not break your role as the author by asking the user questions or entering into a dialogue. Avoid summarizing or bringing the story to an end. If you feel that you have reached the end of the story, simply continue writing and expand it with new details and events so that it does not end. Avoid repetitions and do not rewrite text from the previous chapter. Each chapter should introduce new elements to the story, deepen the existing characters, and further develop the plot."
+        },
+        "iterative_prompts": [
+            {
+                "user_prompt": {
+                    "role": "user",
+                    "content": "Write a fictional story in the following genre: {genre_3}. Do not stop generating and continue writing the story continuously. Use the following opening: {sentence}. Now write the first chapter of your narrative with about 3000 tokens. Avoid any kind of AI comments, notes, or meta-statements that break the role of the author."
+                },
+                "assistant_prompt_start": {
+                    "role": "assistant",
+                    "content": "Here is my answer: {sentence}"
+                },
+                "parse_output": true,
+                "output_name": "generated_chapter_1",
+                "prompt_args": {
+                    "min_tokens": 2500,
+                    "max_tokens": 3000
+                }
+            },
+            {
+                "user_prompt": {
+                    "role": "user",
+                    "content": "Write the second chapter of your narrative. Make sure to introduce new elements into the story and to deepen the existing characters. Write about 3000 tokens. Be careful not to end the story, but instead continue the narrative with further details. Avoid any kind of AI comments, notes, or meta-statements that break the role of the author. Avoid repetitions from the previous chapter and add new elements. Continue exactly where you left off in the last chapter."
+                },
+                "assistant_prompt_start": {
+                    "role": "assistant",
+                    "content": "Hier is the second chapter of my story:"
+                },
+                "parse_output": true,
+                "output_name": "generated_chapter_2",
+                "prompt_args": {
+                    "min_tokens": 2500,
+                    "max_tokens": 3000
+                }
+            },
+            {
+                "user_prompt": {
+                    "role": "user",
+                    "content": "Write the third chapter of your narrative. Make sure to introduce new elements into the story and to deepen the existing characters. Write about 3000 tokens. Be careful not to end the story, but instead continue the narrative with further details. Avoid any kind of AI comments, notes, or meta-statements that break the role of the author. Avoid repetitions from the previous chapter and add new elements. Continue exactly where you left off in the last chapter. "
+                },
+                "assistant_prompt_start": {
+                    "role": "assistant",
+                    "content": "Here is the third chapter of my story:"
+                },
+                "parse_output": true,
+                "output_name": "generated_chapter_3",
+                "prompt_args": {
+                    "min_tokens": 2500,
+                    "max_tokens": 3000
+                }
+            },
+            {
+                "user_prompt": {
+                    "role": "user",
+                    "content": "Write the forth chapter of your narrative. Make sure to introduce new elements into the story and to deepen the existing characters. Write about 3000 tokens. Be careful not to end the story, but instead continue the narrative with further details. Avoid any kind of AI comments, notes, or meta-statements that break the role of the author. Avoid repetitions from the previous chapter and add new elements. Continue exactly where you left off in the last chapter."
+                },
+                "assistant_prompt_start": {
+                    "role": "assistant",
+                    "content": "Here is the forth chapter of my story:"
+                },
+                "parse_output": true,
+                "output_name": "generated_chapter_4",
+                "prompt_args": {
+                    "min_tokens": 2500,
+                    "max_tokens": 3000
+                }
+            }
+        ]
+    },
+    "n-shot": 0,
+    "seed": 271
+}
+]

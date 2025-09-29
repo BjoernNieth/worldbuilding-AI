@@ -1,0 +1,60 @@
+[
+  {
+    "dataset": "Narrative_Beginnings_Ger",
+    "experiment_name": "Narrative_Ger_Llama_70B_final",
+    "model": {
+      "name": "meta-llama/Llama-3.3-70B-Instruct",
+      "model_args": {
+        "gpu_memory_utilization": 0.97,
+        "max_num_seqs": 4,
+        "tensor_parallel_size" : 2,
+        "max_model_len": 12300
+      }
+    },
+"prompts": {
+  "prompt_type": "Chat",
+  "system_prompt": {"role": "system", "content": "Du bist ein preisgekrönter Autor. Deine Aufgabe ist es, eine fiktionale Erzählung zu schreiben. Als Ausgangspunkt verwendest du den vom Nutzer vorgegebenen ersten Satz. Schreibe eine durchgehende Erzählung (ohne Unterbrechungen oder Rückfragen) und lasse diese Geschichte so lange wie möglich weiterlaufen. Breche nicht mit deiner Rolle als Autor, indem du dem Benutzer Fragen stellst oder in einen Dialog trittst. Vermeide es, zusammenzufassen oder die Geschichte enden zu lassen. Wenn du das Gefühl hast, am Ende der Geschichte angekommen zu sein, schreibe einfach weiter und erweitere die Geschichte um neue Details und Ereignisse, damit sie nicht endet. Vermeide Wiederholungen und schreibe nicht den Text aus dem vorherigen Kapitel erneut. Jedes Kapitel soll neue Elemente in die Geschichte einführen, die bisherigen Charaktere vertiefen und die Handlung weiterentwickeln. Antworte immer auf Deutsch."},
+  "iterative_prompts": [
+    {"user_prompt": 
+        {"role": "user", "content": "Schreibe eine fiktionale Geschichte im folgenden Genre: {genre_3}. Höre nicht mit der Generierung auf und schreibe die Geschichte kontinuierlich weiter. Verwende den folgenden Einstieg: {beginnings}. Schreibe nun das erste Kapitel deiner Erzählung mit etwa 3000 Tokens. Vermeide jegliche Form von KI-Kommentaren, Notizen oder Meta-Aussagen, die mit der Rolle des Autors brechen. Antworte bitte auf Deutsch."},
+      "assistant_prompt_start": {"role": "assistant", "content": "Hier ist meine Antwort: {beginnings}"},
+      "parse_output": true,
+      "output_name": "generated_chapter_1",
+      "prompt_args": {
+        "min_tokens": 2500,
+        "max_tokens": 3000
+      }
+    },
+    {"user_prompt": {"role": "user", "content": "Schreibe das zweite Kapitel deiner Erzählung. Achte darauf, neue Elemente in die Geschichte einzubringen und die bisherigen Charaktere zu vertiefen. Schreibe etwa 3000 Tokens. Achte darauf, die Geschichte nicht zu beenden, sondern das Narrativ mit weiteren Details fortzuführen. Vermeide jegliche Form von KI-Kommentaren, Notizen oder Meta-Aussagen, die mit der Rolle des Autors brechen. Vermeide Wiederholungen aus dem vorherigen Kapitel und füge neue Elemente hinzu. Fahre genau dort fort, wo du im letzten Kapitel aufgehört hast. Antworte bitte auf Deutsch."},
+      "assistant_prompt_start": {"role": "assistant", "content": "Hier ist das zweite Kapitel meiner Geschichte:"},
+      "parse_output": true,
+      "output_name": "generated_chapter_2",
+      "prompt_args": {
+        "min_tokens": 2500,
+        "max_tokens": 3000
+      }
+    },
+    {"user_prompt": {"role": "user", "content": "Schreibe das dritte Kapitel deiner Erzählung. Achte darauf, neue Elemente in die Geschichte einzubringen und die bisherigen Charaktere zu vertiefen. Schreibe etwa 3000 Tokens. Achte darauf, die Geschichte nicht zu beenden, sondern das Narrativ mit weiteren Details fortzuführen. Vermeide jegliche Form von KI-Kommentaren, Notizen oder Meta-Aussagen, die mit der Rolle des Autors brechen. Vermeide Wiederholungen aus dem vorherigen Kapitel und füge neue Elemente hinzu. Fahre genau dort fort, wo du im letzten Kapitel aufgehört hast. Antworte bitte auf Deutsch."},
+      "assistant_prompt_start": {"role": "assistant", "content": "Hier ist das dritte Kapitel meiner Geschichte:"},
+      "parse_output": true,
+      "output_name": "generated_chapter_3",
+      "prompt_args": {
+        "min_tokens": 2500,
+        "max_tokens": 3000
+      }
+    },
+    {"user_prompt": {"role": "user", "content": "Schreibe das vierte Kapitel deiner Erzählung. Achte darauf, neue Elemente in die Geschichte einzubringen und die bisherigen Charaktere zu vertiefen. Schreibe etwa 3000 Tokens. Achte darauf, die Geschichte nicht zu beenden, sondern das Narrativ mit weiteren Details fortzuführen. Vermeide jegliche Form von KI-Kommentaren, Notizen oder Meta-Aussagen, die mit der Rolle des Autors brechen. Vermeide Wiederholungen aus dem vorherigen Kapitel und füge neue Elemente hinzu. Fahre genau dort fort, wo du im letzten Kapitel aufgehört hast. Antworte bitte auf Deutsch."},
+      "assistant_prompt_start": {"role": "assistant", "content": "Hier ist das vierte Kapitel meiner Geschichte:"},
+      "parse_output": true,
+      "output_name": "generated_chapter_4",
+      "prompt_args": {
+        "min_tokens": 2500,
+        "max_tokens": 3000
+      }
+    }
+      ]
+    },
+    "n-shot": 0,
+    "seed": 271
+  }
+]
