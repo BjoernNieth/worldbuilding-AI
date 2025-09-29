@@ -1,15 +1,8 @@
-from .IDMGSP import IDMGSP
-from .XSum import XSum
 from .Narrative_Beginnings_Ger import Narrative_Beginnings_Ger
-from .WritingPrompts import WritingPrompts
-from .Base_Dataset import Base_Dataset_Class
 from .Narrative_Beginnings_En import Narrative_Beginnings_En
 from datetime import datetime
 
 datasets = {
-    "IDMGSP": IDMGSP,
-    "XSum": XSum,
-    "WritingPrompts": WritingPrompts,
     "Narrative_Beginnings_Ger": Narrative_Beginnings_Ger,
     "Narrative_Beginnings_En": Narrative_Beginnings_En
 }

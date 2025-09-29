@@ -14,6 +14,7 @@ def get_model(model_name):
     elif model_name.startswith("mockgpt"):
         from .MockGPT import MockGPT
         return MockGPT
+    # Llama code to load default model if none of the above matched
     else:
         from .llama import Llama_Model
         return Llama_Model
