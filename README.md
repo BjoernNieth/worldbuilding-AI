@@ -133,16 +133,20 @@ Each config file specifies:
 4. **Score**: Run `Get_Similarity_Scores.py` to compute overlap with reference corpus
 5. **Aggregate**: Use `Package_Results.py` to combine results from multiple experiments
 
+## Visualization
+The notebooks used for the visualizations from the paper are in the subfolder "visualisation". The scripts assume, that the results files are in the same directory. 
+
 ## Project Structure
 
 ```
-├── datasets/                    # Input datasets
-├── Experiment_Configs/         # Configuration files for experiments
-├── src/                        # Source code modules
+├── datasets/                  # Input datasets
+├── Experiment_Configs/        # Configuration files for experiments
+├── src/                       # Source code modules
 │   ├── datasets/              # Dataset handling
 │   ├── models/                # AI model implementations
 │   ├── prompter/              # Prompting strategies
 │   └── utils/                 # Utility functions
+├── visualization/             # Notebooks producing the visualization of the paper
 ├── run_pipeline.py            # Main experiment runner
 ├── sentence_clf_dataset.py    # Sentence classification tool
 ├── Get_Similarity_Scores.py   # Similarity scoring
