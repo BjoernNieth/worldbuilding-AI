@@ -1,6 +1,6 @@
-# AI in Worldbuilding Study
+# What LLMs (Don’t) Know About Fiction: Measuring Worldbuilding in AI-generated Creative Storytelling
 
-Project description goes here 
+This repository contains code for evaluating worldbuilding in AI-generated fiction using narratology-informed metrics. Building on a fine-tuned BERT classifier for setting, the project analyzes how LLM-generated stories in English and German construct and develop fictional worlds, and compares these patterns to human-authored literary corpora.
 
 ## Project Overview
 
