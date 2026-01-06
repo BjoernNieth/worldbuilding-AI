@@ -20,6 +20,17 @@ The project consists of four main scripts that form a complete experimental pipe
     - vLLM: Follow the instructions on https://docs.vllm.ai/en/latest/getting_started/installation/index.html.
     - Afterwards use your package manager to install pandas
 
+## Datasets
+
+The full-text datasets alongside the metadata used in this project are available here:
+
+Download datasets from here: https://drive.google.com/drive/folders/1Fbn0bw7BOU-CQGOkuuj8T6B7vN3Uwico?usp=sharing
+
+This directory contains the following files:
+- 1,000 English fictional prose texts, along with corresponding metadata and the first sentence of each work
+- 1,000 German fictional prose texts, along with corresponding metadata and the first sentence of each work
+- 1,000 generated texts for each of the four models and each language, using the first sentence from the respective datasets
+
 ## Usage
 
 ### 1. Run Pipeline (`run_pipeline.py`)
