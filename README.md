@@ -148,8 +148,12 @@ Each config file specifies:
 4. **Score**: Run `Get_Similarity_Scores.py` to compute overlap with reference corpus
 5. **Aggregate**: Use `Package_Results.py` to combine results from multiple experiments
 
-## Visualization
-The notebooks used for the visualizations from the paper are in the subfolder "visualisation". The scripts assume, that the results files are in the same directory. 
+## Visualization & Analysis
+The notebooks and scripts for the paper's visualizations and analysis are in the `visualization+analysis/` subfolder. All scripts assume that the results files are in the same directory.
+
+- **`classifier_En.ipynb` / `classifier_Ger.ipynb`** - Apply the setting classifier to the packaged results and produce aggregated CSV files used as input for the R scripts
+- **`narrative_space_analysis_EN_DE.ipynb`** - Produces the visualizations shown in the paper
+- **`Evaluation_English.R` / `Evaluation_German.R`** - Statistical analysis of the classifier outputs
 
 ## Project Structure
 
@@ -161,7 +165,7 @@ The notebooks used for the visualizations from the paper are in the subfolder "v
 │   ├── models/                # AI model implementations
 │   ├── prompter/              # Prompting strategies
 │   └── utils/                 # Utility functions
-├── visualization/             # Notebooks producing the visualization of the paper
+├── visualization+analysis/    # Notebooks and R scripts for analysis and visualization
 ├── run_pipeline.py            # Main experiment runner
 ├── sentence_clf_dataset.py    # Sentence classification tool
 ├── Get_Similarity_Scores.py   # Similarity scoring
