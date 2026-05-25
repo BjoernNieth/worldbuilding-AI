@@ -31,6 +31,10 @@ This directory contains the following files:
 - 1,000 German fictional prose texts, along with corresponding metadata and the first sentence of each work
 - 1,000 generated texts for each of the four models and each language, using the first sentence from the respective datasets
 
+## Model Weights
+The setting classifier weights are available on HuggingFace:
+https://huggingface.co/katrohrb/narrative-space-classifier
+
 ## Usage
 
 ### 1. Run Pipeline (`run_pipeline.py`)
